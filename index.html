@@ -9,15 +9,61 @@
 </head>
 <body>
     <!-- section1 -->
-    <div class="bg-amber-950  ">
+    <div class="bg-coffee-espresso">
         <div class="flex flex-col md:flex-row text-bold text-white items-center justify-between p-6 ">
-            <div>Home</div>
-            <div>BeanBound logo</div>
+            <div>
+                <img src="../Project-webcom/image/FisrtPage/coffee-beans-heart-shape.png" alt="Coffee Image" class="w-full h-full max-w-20">
+            </div>
+            <div>
+                <a href="../Project-webcom/index.html" class="flex items-center justify-center hover:text-coffee-foam hover:scale-105 font-bold text-2xl text-white p-6
+                transition duration-300 ease-in-out transform">BeanBound</a>
+            </div>
             <div>something</div>
+        </div>
+    </div>  
+
+    <div class="bg-coffee-latte flex flex-col md:flex-row text-bold text-white items-center justify-around p-6 gap-6">
+        <div class="max-w-lg leading-relaxed">
+            กาแฟของเราเป็นกาแฟที่ผ่านการประเมินคุณภาพและได้คะแนนตั้งแต่ 80 ขึ้นไปจากระบบให้คะแนนของ Specialty Coffee Association
+            จากคะแนนเต็ม 100 ครอบคลุมทั้งกระบวนการปลูก เก็บเกี่ยว แปรรูป จนถึงการคั่ว
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 rounded-2xl">
+            <img id="slideshow-img" src="../Project-webcom/image/FisrtPage/indexcofee.jpg" alt="Coffee Image" class="w-full h-full max-w-140 object-cover rounded-2xl shadow-lg transition-opacity duration-700">
         </div>
     </div>
 
-    <div>
-        <img src="../Project-webcom/image/FisrtPage/indexcofee.jpg" alt="Coffee Image" class="w-full h-full max-w-140">
-    </div>
+    <script>
+    const images = [
+        "../Project-webcom/image/FisrtPage/indexcofee.jpg",
+        "../Project-webcom/image/FisrtPage/Coffee_cover-odu0zt8892qhv67ofvg6k8y5ismczmiz5xzdtkmxbk.png",
+    ];
+
+    let currentIndex = 0;
+    const imgElement = document.getElementById("slideshow-img");
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // เลื่อนไปทางซ้าย + จางหาย
+        imgElement.style.transform = "translateX(-40px)";
+        imgElement.style.opacity = 0;
+
+        setTimeout(() => {
+            // เปลี่ยนรูป แล้วเลื่อนกลับมาจากขวา (ไม่มี transition ตอนนี้)
+            imgElement.style.transition = "none";
+            imgElement.src = images[currentIndex];
+            imgElement.style.transform = "translateX(40px)";
+
+            // บังคับให้ browser reflow ก่อน (สำคัญมาก ไม่งั้น transition จะไม่ทำงาน)
+            void imgElement.offsetWidth;
+
+            // เปิด transition กลับมา แล้วเลื่อนเข้าที่พร้อม fade in
+            imgElement.style.transition = "all 0.7s ease-in-out";
+            imgElement.style.transform = "translateX(0)";
+            imgElement.style.opacity = 1;
+        }, 700);
+    }, 6000);
+</script>
+
 </body>
+</html>
