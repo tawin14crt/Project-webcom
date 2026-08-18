@@ -7,10 +7,10 @@
     <title>BeanBound–ร้านขายเมล็ดกาแฟพิเศษ</title>
     <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
 </head>
-<body>
+<body >
     <!-- section1 -->
-    <div class="bg-coffee-espresso">
-        <div class="flex flex-col md:flex-row text-bold text-white items-center justify-between p-6 ">
+    <div class="bg-coffee-espresso drop-shadow-2xl">
+        <div class="flex flex-col md:flex-row text-bold text-white items-center justify-between p-2 px-50 ">
             <div>
                 <img src="../Project-webcom/image/FisrtPage/coffee-beans-heart-shape.png" alt="Coffee Image" class="w-full h-full max-w-20">
             </div>
@@ -18,11 +18,35 @@
                 <a href="../Project-webcom/index.html" class="flex items-center justify-center hover:text-coffee-foam hover:scale-105 font-bold text-2xl text-white p-6
                 transition duration-300 ease-in-out transform">BeanBound</a>
             </div>
-            <div>something</div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+
+            </div>
         </div>
     </div>  
 
-    <div class="bg-coffee-latte flex flex-col md:flex-row text-bold text-white items-center justify-around p-6 gap-6">
+
+    <!-- section2 -->
+    <div class="bg-coffee-cream drop-shadow-lg">
+        <div class="flex flex-col md:flex-row text-bold text-items-center justify-between py-4 px-50 gap-4">
+            <div>specialty coffee</div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <div><a href="#" class="text-coffe-latte hover:text-coffee-espresso/50">หน้าแรก</a></div>
+                <div>|</div>
+                <div><a href="#" class="text-coffe-latte hover:text-coffee-espresso/50">เมล็ดกาแฟ</a></div>
+                <div><a href="#" class="text-coffe-latte hover:text-coffee-espresso/50">อุปกรณ์</a></div>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- section3 -->
+    <div class="bg-coffee-foam flex flex-col md:flex-row text-bold text-black items-center justify-around p-6 gap-6">
         <div class="max-w-lg leading-relaxed">
             กาแฟของเราเป็นกาแฟที่ผ่านการประเมินคุณภาพและได้คะแนนตั้งแต่ 80 ขึ้นไปจากระบบให้คะแนนของ Specialty Coffee Association
             จากคะแนนเต็ม 100 ครอบคลุมทั้งกระบวนการปลูก เก็บเกี่ยว แปรรูป จนถึงการคั่ว
@@ -32,38 +56,79 @@
         </div>
     </div>
 
+    <!-- section4  -->
+    <div class="bg-coffee-foam flex flex-col py-6">
+        <div class="flex items-center  gap-2 text-coffee-espresso font-bold text-2xl px-50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-amber-500">
+            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+            </svg>
+            Recommended Products
+        </div>
+
+        <div class="flex items-center px-50 pt-6 gap-6">
+            <div class="bg-white flex items-center justify-center flex-col w-fit rounded-xl shadow-lg border-2 border-transparent hover:border-coffee-espresso hover:border-2 hover:scale-102 
+            transition ">
+                <img src="../Project-webcom/image/Product/arabicaSeeds.webp" alt="Coffee Image" class="w-full h-full max-w-50 object-cover rounded-xl 
+                transition-opacity duration-700 m-2">
+                <div class="text-coffee-espresso font-bold m-2">Arabica Coffee Beans</div>
+                <div class="text-coffee-espresso/70 mb-4">รสชาติซับซ้อน กรดนุ่ม</div><br>
+                <button class="bg-coffee-espresso text-white font-bold py-2 px-4 rounded-full mb-4 hover:bg-coffee-foam hover:text-coffee-espresso 
+                transition duration-300 ease-in-out transform active:scale-92">Add to Cart</button>
+            </div>
+
+
+            <div class="bg-white flex items-center justify-center flex-col w-fit rounded-xl shadow-lg border-2 border-transparent hover:border-coffee-espresso hover:border-2 hover:scale-102 
+            transition ">
+                <img src="../Project-webcom/image/Product/robusta-green-coffee-beans-500x500.webp" alt="Coffee Image" class="w-full h-full max-w-50 object-cover rounded-xl 
+                transition-opacity duration-700 m-2">
+                <div class="text-coffee-espresso font-bold mt-2">Robusta Green</div>
+                <div class="text-coffee-espresso font-bold mb-2">Coffee Beans</div>
+                <div class="text-coffee-espresso/70 mb-4">รสชาติซับซ้อน กรดนุ่ม</div>
+                <button class="bg-coffee-espresso text-white font-bold py-2 px-4 rounded-full mb-4 hover:bg-coffee-foam hover:text-coffee-espresso 
+                transition duration-300 ease-in-out transform active:scale-92">Add to Cart</button>
+            </div>
+
+            
+        </div>
+
+
+
+    </div>
+
+
+
     <script>
-    const images = [
-        "../Project-webcom/image/FisrtPage/indexcofee.jpg",
-        "../Project-webcom/image/FisrtPage/Coffee_cover-odu0zt8892qhv67ofvg6k8y5ismczmiz5xzdtkmxbk.png",
-    ];
+        const images = [
+            "../Project-webcom/image/FisrtPage/indexcofee.jpg",
+            "../Project-webcom/image/FisrtPage/Coffee_cover-odu0zt8892qhv67ofvg6k8y5ismczmiz5xzdtkmxbk.png",
+        ];
 
-    let currentIndex = 0;
-    const imgElement = document.getElementById("slideshow-img");
+        let currentIndex = 0;
+        const imgElement = document.getElementById("slideshow-img");
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
 
-        // เลื่อนไปทางซ้าย + จางหาย
-        imgElement.style.transform = "translateX(-40px)";
-        imgElement.style.opacity = 0;
+            // เลื่อนไปทางซ้าย + จางหาย
+            imgElement.style.transform = "translateX(-40px)";
+            imgElement.style.opacity = 0;
 
-        setTimeout(() => {
-            // เปลี่ยนรูป แล้วเลื่อนกลับมาจากขวา (ไม่มี transition ตอนนี้)
-            imgElement.style.transition = "none";
-            imgElement.src = images[currentIndex];
-            imgElement.style.transform = "translateX(40px)";
+            setTimeout(() => {
+                // เปลี่ยนรูป แล้วเลื่อนกลับมาจากขวา (ไม่มี transition ตอนนี้)
+                imgElement.style.transition = "none";
+                imgElement.src = images[currentIndex];
+                imgElement.style.transform = "translateX(40px)";
 
-            // บังคับให้ browser reflow ก่อน (สำคัญมาก ไม่งั้น transition จะไม่ทำงาน)
-            void imgElement.offsetWidth;
+                // บังคับให้ browser reflow ก่อน (สำคัญมาก ไม่งั้น transition จะไม่ทำงาน)
+                void imgElement.offsetWidth;
 
-            // เปิด transition กลับมา แล้วเลื่อนเข้าที่พร้อม fade in
-            imgElement.style.transition = "all 0.7s ease-in-out";
-            imgElement.style.transform = "translateX(0)";
-            imgElement.style.opacity = 1;
-        }, 700);
-    }, 6000);
-</script>
+                // เปิด transition กลับมา แล้วเลื่อนเข้าที่พร้อม fade in
+                imgElement.style.transition = "all 0.7s ease-in-out";
+                imgElement.style.transform = "translateX(0)";
+                imgElement.style.opacity = 1;
+            }, 700);
+        }, 6000);
+    </script>
 
 </body>
 </html>
