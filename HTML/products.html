@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../src/output.css" rel="stylesheet">
+    <title>BeanBound ร้านขายเมล็ดกาแฟพิเศษ</title>
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="../image/FisrtPage/coffee-beans-heart-shape.png">
+    <!-- npx tailwindcss -i ../src/input.css -o ../src/output.css --watch -->
+</head>
+
+<body class="bg-coffee-foam">
+
+   <!-- section1 -->
+    <div class="bg-coffee-espresso drop-shadow-2xl">
+        <div class="flex flex-col md:flex-row text-bold text-white items-center justify-between p-2 px-50 ">
+            <div class="flex items-center justify-center ">
+                <a href="../index.html" class="flex items-center justify-center hover:text-coffee-foam hover:scale-105 font-bold text-2xl text-white 
+                transition duration-300 ease-in-out transform">
+                <img src="../image/FisrtPage/coffee-beans-heart-shape.png" alt="Coffee Image" class="w-full h-full max-w-20">
+                BeanBound</a>
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 
+                14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 
+                5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+
+            </div>
+        </div>
+    </div>
+
+     <!-- section2 -->
+    <div class="bg-coffee-cream drop-shadow-lg">
+
+        <div class="flex flex-col md:flex-row text-items-center justify-between py-4 px-50 gap-4">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">specialty coffee</div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
+                <div><a href="../index.html" class="hover:text-coffee-latte/70 text-coffee-espresso">หน้าแรก</a></div>
+                <div class="md:w-px md:h-4 md:bg-coffee-espresso"></div>
+                <div><a href="#" class="hover:text-coffee-latte/70 text-coffee-espresso">เมล็ดกาแฟ</a></div>
+                <div><a href="#" class="hover:text-coffee-latte/70 text-coffee-espresso">อุปกรณ์</a></div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- item section -->
+     <div class="flex justify-center items-center pt-10">
+        <div>
+        <div class="bg-white w-fit h-fit  drop-shadow-sd">
+        
+            <div class="flex flex-col md:flex-row  justify-around p-10 gap-10 lg:pr-60 ">
+
+                <div class="w-full h-full max-w-100 object-cover transition-opacity duration-700 ">
+                    <img id="productimg" alt="Coffee Image" >
+                </div>
+
+                <div class="flex flex-col justify-center items-baseline  ">
+                    <div id="productname" class="flex  text-3xl items-start"></div><br>
+                    <div id="productdescription" class="text-coffee-espresso/70"></div><br>
+                    <hr class="border-black/40 w-full"><br>
+                    <div id="productprice" class="text-2xl font-bold text-coffee-espresso"></div><br>
+
+                    <div class="flex items-center gap-4">
+                        <button id="minusButton" class="flex items-center justify-center bg-coffee-foam/50 border-2 border-coffee-espresso px-2.5 text-2xl
+                        hover:bg-coffee-cream active:scale-95">-</button>
+                        <div id="countitem" class="text-xl font-bold text-coffee-espresso px-2">1</div>
+                        <button id="plusButton" class="flex items-center justify-center bg-coffee-foam/50 border-2 border-coffee-espresso px-2 text-2xl
+                         hover:bg-coffee-cream active:scale-95">+</button>
+                        <div>จำนวนที่เหลือ : <span id="stock">0</span></div>
+                    </div>
+                    
+                    <div class="flex gap-4 pt-4">
+                        <button class="bg-coffee-espresso text-white px-5.5 py-2  hover:bg-coffee-foam hover:text-coffee-espresso/70 active:scale-95 mt-4">เพิ่มลงตะกร้า</button>
+                        <button class="bg-coffee-espresso text-white px-5.5 py-2  hover:bg-coffee-foam hover:text-coffee-espresso/70 active:scale-95 mt-4">สั่งซื้อทันที</button>
+                    </div>
+                    
+                </div>
+
+
+
+                
+            </div> 
+        </div>
+        </div>
+        
+        
+    </div>
+    
+
+    <script src="./product.js"></script>
+    <script>
+        // อ่านค่า id จาก URL เช่น product.html?id=arabica
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('id');
+        const product = products[productId];
+
+        if (product) {
+            document.getElementById('productimg').src = product.productimg;
+            document.getElementById('productname').textContent = product.productname;
+            document.getElementById('productdescription').textContent = product.productdescription;
+            document.getElementById('productprice').textContent = product.productprice + " บาท";
+        } else {
+            document.body.innerHTML = "<p class='p-6'>ไม่พบสินค้า</p>";
+        }
+
+        const minusButton = document.getElementById('minusButton');
+        const plusButton = document.getElementById('plusButton');
+        const countItem = document.getElementById('countitem');
+        const stock = document.getElementById('stock');
+
+        stock.textContent = product.productstock;
+
+        minusButton.onclick = function() {
+            let count = parseInt(countItem.textContent);
+            if (count > 1) {
+                count--;
+                countItem.textContent = count;
+            }
+        }
+
+        plusButton.onclick = function() {
+
+            let count = parseInt(countItem.textContent);
+            if (count < product.productstock) {
+                count++;
+                countItem.textContent = count;
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
