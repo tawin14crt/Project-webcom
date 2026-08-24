@@ -190,6 +190,24 @@
   }
 }
 @layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -265,6 +283,9 @@
   }
   .max-w-140 {
     max-width: calc(var(--spacing) * 140);
+  }
+  .max-w-250 {
+    max-width: calc(var(--spacing) * 250);
   }
   .max-w-lg {
     max-width: var(--container-lg);
@@ -497,12 +518,6 @@
     transition-timing-function: var(--ease-in-out);
   }
   @media (hover: hover) {
-    .hover\:scale-10:hover {
-      --tw-scale-x: 10%;
-      --tw-scale-y: 10%;
-      --tw-scale-z: 10%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
     .hover\:scale-102:hover {
       --tw-scale-x: 102%;
       --tw-scale-y: 102%;
