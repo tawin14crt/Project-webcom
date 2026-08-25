@@ -1,10 +1,27 @@
 
+
 const CART_KEY = 'beanbound_cart';
 
+// ---------- Path helpers ----------
+// เก็บ path รูปแบบ "root-relative" เสมอ (ตัด ../ หรือ ./ ที่นำหน้าออก)
+// เพราะหน้าที่กด "เพิ่มลงตะกร้า" กับหน้าที่ "แสดง" ตะกร้า อยู่คนละระดับโฟลเดอร์กัน
+function normalizeImgPath(img) {
+    if (!img) return img;
+    return img.replace(/^(\.\.\/)+/, '').replace(/^\.\/+/, '');
+}
 
+// คำนวณ prefix ที่ถูกต้องตามตำแหน่งหน้าปัจจุบัน (root ใช้ "./", ใน /HTML/ ใช้ "../")
+function getBasePath() {
+    return window.location.pathname.includes('/HTML/') ? '../' : './';
+}
+
+// ---------- Data helpers ----------
 function getCart() {
     try {
-        return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        // เผื่อมี item เก่าที่เก็บ path แบบ ../ หรือ ./ ไว้ตั้งแต่ก่อนแก้ ให้ normalize ทันทีที่อ่าน
+        cart.forEach(item => { item.img = normalizeImgPath(item.img); });
+        return cart;
     } catch (e) {
         return [];
     }
@@ -16,6 +33,7 @@ function saveCart(cart) {
     renderCartItems();
 }
 
+// item = { id, name, img, price, stock }
 function addToCart(item, qty = 1) {
     if (!item || !item.id) return;
     const cart = getCart();
@@ -28,7 +46,7 @@ function addToCart(item, qty = 1) {
         cart.push({
             id: item.id,
             name: item.name,
-            img: item.img,
+            img: normalizeImgPath(item.img),
             price: item.price,
             stock: maxStock,
             qty: Math.min(qty, maxStock)
@@ -111,7 +129,7 @@ function renderCartItems() {
     } else {
         container.innerHTML = cart.map(item => `
             <div class="flex gap-3 items-center border-b border-coffee-espresso/10 pb-4">
-                <img src="${item.img}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                <img src="${getBasePath()}${item.img}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
                 <div class="flex-1 min-w-0">
                     <div class="text-sm font-bold text-coffee-espresso truncate">${item.name}</div>
                     <div class="text-coffee-espresso/70 text-sm">${item.price.toLocaleString()} บาท</div>
