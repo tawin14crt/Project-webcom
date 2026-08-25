@@ -21,11 +21,14 @@
                 BeanBound</a>
             </div>
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 
-                14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 
-                5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                </svg>
+                <button class="cart-icon-btn relative cursor-pointer hover:text-coffee-foam hover:scale-105 transition duration-300 ease-in-out transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 
+                    14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 
+                    5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <span class="cart-badge absolute top-1 right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </button>
 
             </div>
         </div>
@@ -40,8 +43,8 @@
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
                 <div><a href="../index.html" class="hover:text-coffee-latte/70 text-coffee-espresso">หน้าแรก</a></div>
                 <div class="md:w-px md:h-4 md:bg-coffee-espresso"></div>
-                <div><a href="#" class="hover:text-coffee-latte/70 text-coffee-espresso">เมล็ดกาแฟ</a></div>
-                <div><a href="#" class="hover:text-coffee-latte/70 text-coffee-espresso">อุปกรณ์</a></div>
+                <div><a href="../HTML/products.html" class="hover:text-coffee-latte/70 text-coffee-espresso">เมล็ดกาแฟ</a></div>
+                <div><a href="../HTML/equippage.html" class="hover:text-coffee-latte/70 text-coffee-espresso">อุปกรณ์</a></div>
                 
             </div>
         </div>
@@ -75,7 +78,7 @@
                     </div>
                     
                     <div class="flex gap-4 pt-4">
-                        <button class="bg-coffee-espresso text-white px-5.5 py-2  hover:bg-coffee-foam hover:text-coffee-espresso/70 active:scale-95 mt-4">เพิ่มลงตะกร้า</button>
+                        <button id="addToCartBtn" class="bg-coffee-espresso text-white px-5.5 py-2  hover:bg-coffee-foam hover:text-coffee-espresso/70 active:scale-95 mt-4">เพิ่มลงตะกร้า</button>
                         <button class="bg-coffee-espresso text-white px-5.5 py-2  hover:bg-coffee-foam hover:text-coffee-espresso/70 active:scale-95 mt-4">สั่งซื้อทันที</button>
                     </div>
                     
@@ -117,7 +120,7 @@
         </div>   
         </footer>
     
-
+    <script src="../cart.js"></script>
     <script src="./product.js"></script>
     <script src="./equipment.js"></script>
     <script>
