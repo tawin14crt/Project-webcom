@@ -29,7 +29,6 @@
                     </svg>
                     <span class="cart-badge absolute top-1 right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
                 </button>
-
             </div>
         </div>
     </div>
@@ -43,8 +42,8 @@
             <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
                 <div><a href="../index.html" class="hover:text-coffee-latte/70 text-coffee-espresso">หน้าแรก</a></div>
                 <div class="md:w-px md:h-4 md:bg-coffee-espresso"></div>
-                <div><a href="../HTML/products.html" class="hover:text-coffee-latte/70 text-coffee-espresso">เมล็ดกาแฟ</a></div>
-                <div><a href="../HTML/equippage.html" class="hover:text-coffee-latte/70 text-coffee-espresso">อุปกรณ์</a></div>
+                <div><a href="./coffeepage.html" class="hover:text-coffee-latte/70 text-coffee-espresso">เมล็ดกาแฟ</a></div>
+                <div><a href="./equippage.html" class="hover:text-coffee-latte/70 text-coffee-espresso">อุปกรณ์</a></div>
                 
             </div>
         </div>
@@ -120,6 +119,7 @@
         </div>   
         </footer>
     
+
     <script src="../cart.js"></script>
     <script src="./product.js"></script>
     <script src="./equipment.js"></script>
@@ -163,7 +163,17 @@
             }
         }
 
-
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        addToCartBtn.onclick = function() {
+            const qty = parseInt(countItem.textContent);
+            addToCart({
+                id: productId,
+                name: product.productname,
+                img: product.productimg,
+                price: product.productprice,
+                stock: product.productstock
+            }, qty);
+        }
 
     </script>
 

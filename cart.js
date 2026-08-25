@@ -1,11 +1,7 @@
-/* ================================
-   BeanBound - Shopping Cart System
-   ใช้ร่วมกันทุกหน้า (index, coffeepage, equippage, products)
-   ================================ */
 
 const CART_KEY = 'beanbound_cart';
 
-// ---------- Data helpers ----------
+
 function getCart() {
     try {
         return JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -20,7 +16,6 @@ function saveCart(cart) {
     renderCartItems();
 }
 
-// item = { id, name, img, price, stock }
 function addToCart(item, qty = 1) {
     if (!item || !item.id) return;
     const cart = getCart();
