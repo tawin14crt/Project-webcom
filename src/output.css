@@ -247,9 +247,6 @@
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
-  }
   .mt-1 {
     margin-top: var(--spacing);
   }
@@ -501,9 +498,6 @@
   .p-1\.5 {
     padding: calc(var(--spacing) * 1.5);
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -534,20 +528,11 @@
   .px-20 {
     padding-inline: calc(var(--spacing) * 20);
   }
-  .px-45 {
-    padding-inline: calc(var(--spacing) * 45);
-  }
-  .px-50 {
-    padding-inline: calc(var(--spacing) * 50);
-  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
@@ -769,8 +754,26 @@
     .md\:bg-coffee-espresso {
       background-color: var(--color-coffee-espresso);
     }
+    .md\:p-2 {
+      padding: calc(var(--spacing) * 2);
+    }
+    .md\:px-45 {
+      padding-inline: calc(var(--spacing) * 45);
+    }
     .md\:px-50 {
       padding-inline: calc(var(--spacing) * 50);
+    }
+    .md\:py-4 {
+      padding-block: calc(var(--spacing) * 4);
+    }
+    .md\:py-6 {
+      padding-block: calc(var(--spacing) * 6);
+    }
+    .md\:pt-10 {
+      padding-top: calc(var(--spacing) * 10);
+    }
+    .md\:pb-4 {
+      padding-bottom: calc(var(--spacing) * 4);
     }
   }
   @media (width >= 64rem) {
@@ -780,11 +783,26 @@
     .lg\:items-end {
       align-items: flex-end;
     }
+    .lg\:gap-4 {
+      gap: calc(var(--spacing) * 4);
+    }
     .lg\:gap-6 {
       gap: calc(var(--spacing) * 6);
     }
+    .lg\:p-2 {
+      padding: calc(var(--spacing) * 2);
+    }
+    .lg\:px-45 {
+      padding-inline: calc(var(--spacing) * 45);
+    }
     .lg\:px-50 {
       padding-inline: calc(var(--spacing) * 50);
+    }
+    .lg\:py-4 {
+      padding-block: calc(var(--spacing) * 4);
+    }
+    .lg\:py-6 {
+      padding-block: calc(var(--spacing) * 6);
     }
     .lg\:pr-60 {
       padding-right: calc(var(--spacing) * 60);
